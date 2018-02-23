@@ -1,0 +1,23 @@
+﻿header{
+  height: 50px;background: #5208ce;line-height: 50px;text-indent: 2em;font-size: 20px;color: #fff;
+}
+
+.ul li{
+  float: left;display: inline;padding:5px; background: #1964b5;color: #fff;font-size: 14px;margin: 0 10px;
+  cursor: pointer;
+}
+
+.clearfix { 
+  *zoom: 1; 
+} 
+ 
+.clearfix:before, 
+.clearfix:after { 
+  display: table; 
+  line-height: 0; 
+  content: ""; 
+} 
+ 
+.clearfix:after { 
+  clear: both; 
+} 
