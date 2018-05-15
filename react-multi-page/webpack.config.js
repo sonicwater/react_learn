@@ -8,7 +8,7 @@ module.exports = {
         index:'./src/js/index.js',
         contact:'./src/js/contact.js',
         about:'./src/js/about.js',
-    },
+    }, 
     mode,
 	output: {
         filename: './js/[name].[chunkhash].js'
