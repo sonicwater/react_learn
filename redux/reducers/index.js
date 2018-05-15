@@ -1,8 +1,8 @@
 export default (state = 0, action) => {
   	switch (action.type) {
-    	case 'INCREMENT':
+    	case '加':
       		return state + 1
-    	case 'DECREMENT':
+    	case '减':
       		return state - 1
     	default:
       		return state

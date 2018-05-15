@@ -5,7 +5,7 @@
   "main": "/app/index.jsx",
   "scripts": {
     "build": "webpack",
-    "dev": "webpack-dev-server --open --hot --inline"
+    "dev": "webpack-dev-server --progress --open --hot --inline"
   },
   "author": "",
   "license": "ISC",
@@ -20,12 +20,12 @@
     "fetch": "^1.1.0",
     "file-loader": "^1.1.6",
     "json-loader": "^0.5.7",
-    "webpack": "^3.10.0",
-    "webpack-dev-server": "^2.9.7"
-  },
-  "dependencies": {
     "react": "^16.2.0",
     "react-addons-pure-render-mixin": "^15.6.2",
     "react-dom": "^16.2.0"
+  },
+  "dependencies": {
+    "webpack": "^3.11.0",
+    "webpack-dev-server": "^2.11.1"
   }
 }
