@@ -1,13 +1,11 @@
-var path = require("path");
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var mode = "production";
+const path = require("path");
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const mode = "production";
 
 module.exports = {
   	entry:{
-        index:'./src/js/index.js',
-        contact:'./src/js/contact.js',
-        about:'./src/js/about.js',
+        index:'./src/js/index.jsx'
     }, 
     mode,
 	output: {
@@ -15,6 +13,14 @@ module.exports = {
 	},
     module: {
         rules: [
+            {
+                test: /\.jsx?$/,
+                loader: 'babel-loader',
+                exclude: /node_modules/,
+                query: {
+                    presets: ['es2015']
+                }
+            },
             {
                 test: /\.json$/,
                 type: "javascript/auto"
@@ -50,17 +56,8 @@ module.exports = {
             template: './src/index.html',
             chunks: ['index']
         }),
-        new HtmlWebpackPlugin({
-            title: 'contact',
-            filename: './contact.html',
-            template: './src/contact.html',
-            chunks: ['contact']
-        }),
-        new HtmlWebpackPlugin({
-            title: 'about',
-            filename: './about.html',
-            template: './src/about.html',
-            chunks: ['about']
+        new ExtractTextPlugin({
+            filename: "css/[name].[chunkhash].css"
         })
     ]
 };
