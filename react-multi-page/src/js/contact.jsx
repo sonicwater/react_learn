@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Header from './components/header.jsx';
 import Footer from './components/footer.jsx';
-import Index from './components/index.jsx';
+import Contact from './components/contact.jsx';
 
 import '../css/common.css';
 import '../css/layout.less';
@@ -11,8 +11,8 @@ class Main extends React.Component{
 	render(){
 		return(
 			<div>
-				<Header/>
-				<Index/>
+				<Header bgcolor="red" />
+				<Contact/>
 				<Footer/>
 		  	</div>
 		);

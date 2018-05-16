@@ -5,7 +5,9 @@ const mode = "production";
 
 module.exports = {
   	entry:{
-        index:'./src/js/index.jsx'
+        index:'./src/js/index.jsx',
+        contact:'./src/js/contact.jsx',
+        about:'./src/js/about.jsx'
     }, 
     mode,
 	output: {
@@ -55,6 +57,18 @@ module.exports = {
             filename: './index.html',
             template: './src/index.html',
             chunks: ['index']
+        }),
+        new HtmlWebpackPlugin({
+            title: 'contact',
+            filename: './contact.html',
+            template: './src/contact.html',
+            chunks: ['contact']
+        }),
+        new HtmlWebpackPlugin({
+            title: 'about',
+            filename: './about.html',
+            template: './src/about.html',
+            chunks: ['about']
         }),
         new ExtractTextPlugin({
             filename: "css/[name].[chunkhash].css"
