@@ -1,7 +1,4 @@
-import React from 'react';
-import '../../css/lunbo.less';
-
-class Lunbo {
+export default class Lunbo {
   	constructor(element) {
 	    this.viewport = element;
 	    this.father = element.children[0];
@@ -65,41 +62,5 @@ class Lunbo {
 
 	right() {
 	    this.load(this.showingId + 1);
-	}
-}
-
-export default class LunboClass extends React.Component{
-
-	componentDidMount(){
-		const Example = new Lunbo(document.getElementById("example"));
-		Example.load();
-	}
-	
-	render(){
-		return(
-			<div class="viewport" id="example">
-			  	<div class="father">
-				    <div class="a">A</div>
-				    <div class="b">B</div>
-				    <div class="c">C</div>
-				    <div class="d">D</div>
-				    <div class="e">E</div>
-
-				    <div class="a">A</div>
-				    <div class="b">B</div>
-				    <div class="c">C</div>
-				    <div class="d">D</div>
-				    <div class="e">E</div>
-
-				    <div class="a">A</div>
-				    <div class="b">B</div>
-				    <div class="c">C</div>
-				    <div class="d">D</div>
-				    <div class="e">E</div>
-			  	</div>
-			  	<div class="mother left">&lt;</div>
-			  	<div class="mother right">&gt;</div>
-			</div>
-		);
 	}
 }

@@ -17,7 +17,9 @@ export default class Index extends React.Component{
 					<div className="main">
 	      				<h2>这里是首页</h2>
 
-	      				<img src={banner1} /> 
+	      				<img src={banner1} />
+	      				<img src={banner2} />
+	      				<img src={banner3} /> 
 	      			</div>
 				</div>
 			</div>
