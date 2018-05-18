@@ -94,11 +94,10 @@ export default class Header extends React.Component{
         					<Modal title="用户中心" warpClassName="vertical-center-modal" visible={this.state.modalVisible} onCancel = {()=>this.setModalVisible(false)} onOk= {()=>this.setModalVisible(false)} okText="关闭">
         						<Tabs type="card">
         							<TabPane tab="注册" key="2">
-										<Form layout="inline" onSubmit={this.handleSubmit.bind(this)}>
+										<Form layout="horizontal" onSubmit={this.handleSubmit.bind(this)}>
 											<FormItem label="账户" hasFeedback>
 												<Input placeholder="输入您的账号" />
 											</FormItem>
-											
 											<FormItem label="密码" hasFeedback>
 												<Input type="password" placeholder="输入您的密码"  />
 											</FormItem>
