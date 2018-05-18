@@ -1,0 +1,31 @@
+.viewport {
+  width: 550px;height: 300px;
+  overflow: hidden;
+  position: relative;
+}
+.father {
+  height: inherit;
+  width: 3000%;
+  transform: translate3d(0, 0, 0);
+  transition: transform 0.3s ease-in-out;
+} .father.moving { transition: none }
+.father > div {
+  width: 550px;height: inherit;background: #aaa;
+  float: left;
+}
+.father > div.a{background:#fff;}
+.father > div.b{background:#eee;}
+.father > div.c{background:#ddd;}
+.father > div.d{background:#ccc;}
+.father > div.e{background:#bbb;}
+.mother {
+  width: 30px;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  cursor: pointer;
+  user-select:none;
+  background: rgba(0,0,0,0.5);color:#fff;
+  position: absolute;top: 120px;
+} .mother.left { left: 10px } .mother.right { right: 10px }
+.mother:hover{background: rgba(0,0,0,0.75);}
