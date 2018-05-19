@@ -48,8 +48,6 @@ export default class Header extends React.Component{
 	}
 
 	render(){
-
-
 		return(
 			<div>
 				<header>
@@ -62,32 +60,17 @@ export default class Header extends React.Component{
 				      	</Col>
 				      	<Col span={12}>
 				      		<Menu mode="horizontal" onClick={this.handleClick.bind(this)} selectedKeys={[this.state.current]}>
-        						<Menu.Item key="top">
-        							<Icon type="home" />头条
+        						<Menu.Item key="index">
+        							<Icon type="home" />Index
         						</Menu.Item>
-        						<Menu.Item key="shehui">
-        							<Icon type="scan" />社会
+        						<Menu.Item key="contact">
+        							<Icon type="contacts" />Contact
         						</Menu.Item>
-        						<Menu.Item key="guonei">
-        							<Icon type="appstore" />国内
-        						</Menu.Item>
-        						<Menu.Item key="guoji">
-        							<Icon type="global" />国际
-        						</Menu.Item>
-        						<Menu.Item key="yule">
-        							<Icon type="video-camera" />娱乐
-        						</Menu.Item>
-        						<Menu.Item key="tiyu">
-        							<Icon type="compass" />体育
-        						</Menu.Item>
-        						<Menu.Item key="keji">
-        							<Icon type="rocket" />科技
-        						</Menu.Item>
-        						<Menu.Item key="shishang">
-        							<Icon type="camera" />时尚
+        						<Menu.Item key="about">
+        							<Icon type="info-circle" />About
         						</Menu.Item>
         						<Menu.Item key="register" className="register">
-									<Icon type="appstore" />注册/登陆
+									<Icon type="login" />Reg/Login
 								</Menu.Item>
         					</Menu>
 
@@ -95,28 +78,18 @@ export default class Header extends React.Component{
         						<Tabs type="card">
         							<TabPane tab="注册" key="2">
 										<Form layout="horizontal" onSubmit={this.handleSubmit.bind(this)}>
-											<FormItem label="账户" hasFeedback>
-												<Input placeholder="输入您的账号" />
-											</FormItem>
 											<FormItem label="密码" hasFeedback>
 												<Input type="password" placeholder="输入您的密码"  />
 											</FormItem>
-											
 											<FormItem label="确认密码" hasFeedback>
 												<Input type="password" placeholder="请再次输入您的密码"  />
 											</FormItem>
-
-											
-
-											
 											<Button type="primary" htmlType="submit">注册
 											</Button>
 										</Form>
 									</TabPane>
         						</Tabs>
         					</Modal>
-
-
 				      	</Col>
 				      	<Col span={4}></Col>
 				    </Row>
