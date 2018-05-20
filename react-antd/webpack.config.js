@@ -1,6 +1,7 @@
 const path = require("path");
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ImageminPlugin = require('imagemin-webpack-plugin').default;
 const mode = "production";
 
 module.exports = {
@@ -59,6 +60,10 @@ module.exports = {
         }),
         new ExtractTextPlugin({
             filename: "css/[name].[chunkhash].css"
+        }),
+        new ImageminPlugin({
+            minFileSize: 10000, // Only apply this one to files over 10kb
+            jpegtran: { progressive: true }
         })
     ]
 };

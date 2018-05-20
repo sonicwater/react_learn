@@ -1,5 +1,6 @@
 import React from 'react';
 import Tab from '../plugins/tab.jsx';
+import banner from '../../images/banner.jpg';
 import banner1 from '../../images/banner1.jpg';
 import banner2 from '../../images/banner2.jpg';
 import banner3 from '../../images/banner3.jpg';
@@ -18,6 +19,7 @@ export default class Index extends React.Component{
 				<div className="container clearfix">
 					<div className="main">
 	      				<h2>{this.state.title}</h2>
+	      				<img width="100%" src={banner} />
 	      				<Tab>
 		                    <div name = "first">
 		                        <img width="100%" src={banner1} />
