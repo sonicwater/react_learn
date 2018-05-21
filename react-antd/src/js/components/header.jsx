@@ -78,6 +78,9 @@ export default class Header extends React.Component{
         						<Tabs type="card">
         							<TabPane tab="注册" key="2">
 										<Form layout="horizontal" onSubmit={this.handleSubmit.bind(this)}>
+											<FormItem label="用户名" hasFeedback>
+												<Input type="text" placeholder="输入您的用户名"  />
+											</FormItem>
 											<FormItem label="密码" hasFeedback>
 												<Input type="password" placeholder="输入您的密码"  />
 											</FormItem>
