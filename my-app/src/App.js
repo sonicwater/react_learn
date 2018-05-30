@@ -1,24 +1,42 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
 
 class App extends Component {
-  constructor(props,context){
+  constructor(){
     super();
     this.state = {
-      list:"[1,2,3]"
+      list:[],
+      value:""
     }
   }
+  changeList(){
+    this.setState({
+      list:this.state.list.concat(this.state.value),
+      value:""
+    });
+  }
+  changeHandler(event){
+    this.setState({
+      value:event.target.value
+    });
+  }
+  delete(value){
+    let arr = this.state.list;
+    arr.splice(value.index,1);
+    this.setState({
+      list:arr
+    });
+  }
   render() {
+    const data = this.state.list;
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome Sonic</h1>
-        </header>
-        <p className="App-intro">
-          {this.state.list}
-        </p>
+        <ul className="App-intro">
+          {data.map((item,index)=>{
+            return <li key={index}>{item}<button onClick={this.delete.bind(this,{index})}>delete</button></li>
+          })}
+        </ul>
+        <input type="text" value={this.state.value} onChange={this.changeHandler.bind(this)} />
+        <button onClick={this.changeList.bind(this)}>changeList</button>
       </div>
     );
   }
