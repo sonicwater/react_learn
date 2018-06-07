@@ -10,8 +10,9 @@ class App extends Component {
   }
   changeList(){
     this.setState({
-      list:this.state.list.concat(this.state.value),
-      value:""
+      value:"",
+      list:this.state.list.concat(this.state.value)
+      
     });
   }
   changeHandler(event){
@@ -32,7 +33,7 @@ class App extends Component {
       <div className="App">
         <ul className="App-intro">
           {data.map((item,index)=>{
-            return <li key={index}>{item}<button onClick={this.delete.bind(this,{index})}>delete</button></li>
+            return <li>{item}<button onClick={this.delete.bind(this,{index})}>delete</button></li>
           })}
         </ul>
         <input type="text" value={this.state.value} onChange={this.changeHandler.bind(this)} />
