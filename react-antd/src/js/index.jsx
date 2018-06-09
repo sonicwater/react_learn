@@ -30,6 +30,9 @@ class Index extends React.Component{
 			list:arr
 		});
 	}
+	test(){
+		alert(123);
+	}
     render(){
     	let data = this.state.list;
 		return(
@@ -41,7 +44,7 @@ class Index extends React.Component{
 				</ul>
 				<input type="text" value={this.state.value} onChange={this.change.bind(this)} />
 				<button onClick={this.add.bind(this)}>add</button>
-				<Input abc={this.state.list} />
+				<Input abc={this.state.list} test={this.test.bind(this)} />
 		  	</div>
 		);
 	}

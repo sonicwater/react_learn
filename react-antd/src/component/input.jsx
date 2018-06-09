@@ -3,10 +3,15 @@ import React from 'react';
 export default class Input extends React.Component{
 	constructor(){
 		super();
+		this.state = {
+			test:'test'
+		}
 	}
 	render(){
 		return(
-			<div>{this.props.abc}</div>
+			<button onClick={this.props.test}>
+				{this.props.abc}
+			</button>
 		)
 	}
 }
