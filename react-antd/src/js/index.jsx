@@ -7,7 +7,8 @@ class Index extends React.Component{
 		super();
 		this.state = {
 			list:[],
-			value:""
+			value:"",
+			message:"我是父组的按钮"
 		}
 	}
 	add(){
@@ -30,8 +31,11 @@ class Index extends React.Component{
 			list:arr
 		});
 	}
-	test(){
-		alert(123);
+	test(msg){
+		console.log(msg);
+		this.setState({
+	      	message:msg
+	    })
 	}
     render(){
     	let data = this.state.list;
@@ -43,8 +47,8 @@ class Index extends React.Component{
 					})}
 				</ul>
 				<input type="text" value={this.state.value} onChange={this.change.bind(this)} />
-				<button onClick={this.add.bind(this)}>add</button>
-				<Input abc={this.state.list} test={this.test.bind(this)} />
+				<button onClick={this.add.bind(this)}>{this.state.message}</button>
+				<Input fu_test={msg=>this.test(msg)} />
 		  	</div>
 		);
 	}

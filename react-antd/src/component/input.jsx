@@ -4,14 +4,14 @@ export default class Input extends React.Component{
 	constructor(){
 		super();
 		this.state = {
-			test:'test'
+			test:'我是子组件的按钮'
 		}
 	}
 	render(){
 		return(
-			<button onClick={this.props.test}>
-				{this.props.abc}
-			</button>
+				<button onClick={()=>{this.props.fu_test(this.state.test)}}>
+					改变按钮的文字
+				</button>
 		)
 	}
 }
