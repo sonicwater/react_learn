@@ -8,6 +8,11 @@ class App extends Component {
             value:"父组件的值"
         }
     }
+    setChildVal(){
+        this.setState({
+            value:"父组件的值"
+        });
+    }
     getChildVal(val){
         this.setState({
             value:val
@@ -16,8 +21,9 @@ class App extends Component {
     render() {
         return (
             <div>
-                {this.state.value}
-                <Child gcv={val=>this.getChildVal(val)} />
+                <p style={{color:'red'}}>来自父组件:{this.state.value}</p>
+                <Child scv={this.state.value} gcv={val=>this.getChildVal(val)} />
+                <button onClick={this.setChildVal.bind(this)}>从父组建向子组件传值</button>
             </div> 
         );
     }
