@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import Child from './components/child'
+import Child from './components/child';
+import Input from './components/input';
 
 class App extends Component {
     constructor() {
@@ -24,6 +25,8 @@ class App extends Component {
                 <p style={{color:'red'}}>来自父组件:{this.state.value}</p>
                 <Child scv={this.state.value} gcv={val=>this.getChildVal(val)} />
                 <button onClick={this.setChildVal.bind(this)}>从父组建向子组件传值</button>
+
+                <Input/>
             </div> 
         );
     }
