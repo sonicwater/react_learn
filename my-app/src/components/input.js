@@ -15,7 +15,6 @@ export default class Child extends React.Component {
 	render(){
 		return(
 			<div>
-				{this.state.inputValue}
 				<input type="text" onChange={this.change.bind(this)} value={this.state.inputValue} />
 			</div>
 		)
