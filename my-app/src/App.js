@@ -8,11 +8,11 @@ class App extends Component {
     render() {
         return (
             <div>
-                <BrowserRouter basename="/home">
+                <BrowserRouter basename="/">
                     <div>
                         <ul>
                             <li>
-                                <Link to="/">Home</Link>
+                                <Link to="/Home">Home</Link>
                                 
                             </li>
                             <li>
