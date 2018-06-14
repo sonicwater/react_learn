@@ -13,13 +13,12 @@ class App extends Component {
                         <ul>
                             <li>
                                 <Link to="/Home">Home</Link>
-                                
                             </li>
                             <li>
                                 <Link to="/Input">Input</Link>
                             </li>
                         </ul>
-                        <Route exact path="/" component={Home} />
+                        <Route exact path="/Home" component={Home} />
                         <Route exact path="/Input" component={Input} />
                     </div>
                 </BrowserRouter>
