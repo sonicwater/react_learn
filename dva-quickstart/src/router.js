@@ -1,7 +1,7 @@
 import React from 'react';
 import { Router, Route, Switch, Link } from 'dva/router';
 import IndexPage from './routes/IndexPage';
-import Home from './routes/Home';
+import Exam from './components/Example';
 
 function RouterConfig({ history }) {
   return (
@@ -17,7 +17,7 @@ function RouterConfig({ history }) {
             </ul>
 	      	<Switch>
 	        	<Route path="/" exact component={IndexPage} />
-	        	<Route path="/home" exact component={Home} />
+	        	<Route path="/home" exact component={Exam} />
 	      	</Switch>
 	    </div>
     </Router>
