@@ -1,4 +1,5 @@
 import React from 'react';
+import Twitter from './Twitter';
 export default class TodoItem extends React.Component{
     constructor(){
         super();
@@ -9,8 +10,10 @@ export default class TodoItem extends React.Component{
     handleSubmit = () => {
         this.setState({
             value:this.inputValue.value
+        },()=>{
+            this.inputValue.value = "";
         });
-        this.inputValue.value = "";
+        
     }
     render () {
         return (
@@ -18,6 +21,9 @@ export default class TodoItem extends React.Component{
                 {this.state.value} <br />
                 <input type='text' ref={(val) => this.inputValue = val} />
                 <button onClick={this.handleSubmit} type='button'>Submit</button>
+                <Twitter username='tylermcginnis33'>
+                    {(user) => user === null ? "loading" : "1"}
+                </Twitter>
             </div>
         )
     }
