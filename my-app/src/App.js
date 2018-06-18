@@ -20,8 +20,12 @@ class App extends Component {
     render() {
         return (
             <Layout>
-                <Header style={{ background: 'rgba(16, 142, 233, 1)', padding: 0 }}>
-                    Header
+                <Header style={{ background: 'rgba(16, 142, 233, 1)' }}>
+                    <Icon
+                        className="trigger"
+                        type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'}
+                        onClick={this.toggle}
+                    /> Header
                 </Header>
                 
                 <BrowserRouter basename="/">
@@ -31,12 +35,6 @@ class App extends Component {
                             collapsible
                             collapsed={this.state.collapsed}
                         >
-                            <div className="logo" />
-                            <Icon
-                                className="trigger"
-                                type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'}
-                                onClick={this.toggle}
-                            />
                             <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
                                 <Menu.Item key="1">
                                     <Icon type="user" />
@@ -61,7 +59,7 @@ class App extends Component {
                     
                     </Layout>
                 </BrowserRouter>
-                <Footer style={{ background: 'rgba(16, 142, 233, 1)', padding: 0 }}>
+                <Footer style={{ background: 'rgba(16, 142, 233, 1)' }}>
                     Footer
                 </Footer>
             </Layout>
