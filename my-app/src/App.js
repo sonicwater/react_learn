@@ -1,54 +1,71 @@
 import React, {Component} from 'react';
 import {BrowserRouter, Route, Link} from 'react-router-dom';
-import { Row, Col } from 'antd';
-import zhCN from 'antd/lib/locale-provider/zh_CN';
 import Home from './components/home';
 import Input from './components/input';
 import Comp1 from './components/comp1';
+import { Row, Col, Layout, Menu, Icon } from 'antd';
+const { Header, Content, Footer, Sider } = Layout;
 
 class App extends Component {
+
+    state = {
+        collapsed: false,
+    };
+    toggle = () => {
+        this.setState({
+            collapsed: !this.state.collapsed,
+        });
+    }
     
     render() {
         return (
-            <div className="ant-layout">
-                <Row>
-                    <Col span={24}>
-                        <header className="ant-layout-header">header</header>
-                    </Col>
-                </Row>
+            <Layout>
+                <Header style={{ background: 'rgba(16, 142, 233, 1)', padding: 0 }}>
+                    Header
+                </Header>
                 
                 <BrowserRouter basename="/">
-                    <Row className="ant-layout ant-layout-has-sider">
-                        <Col span={4}>
-                            <div className="ant-layout-sider ant-layout-sider-dark"> 
-                                <ul>
-                                    <li>
-                                        <Link to="/Home">Home</Link>
-                                    </li>
-                                    <li>
-                                        <Link to="/Input">Input</Link>
-                                    </li>
-                                    <li>
-                                        <Link to="/Comp1">Comp1</Link>
-                                    </li>
-                                </ul>
-                            </div>
-                        </Col>
-                        <Col span={20}>
-                            <div class="ant-layout-content ant-layout-sider-children">
-                                <Route exact path="/Home" component={Home} />
-                                <Route exact path="/Input" component={Input} />
-                                <Route exact path="/Comp1" component={Comp1} />
-                            </div>
-                        </Col>
-                    </Row>
+                    <Layout>
+                        <Sider
+                            trigger={null}
+                            collapsible
+                            collapsed={this.state.collapsed}
+                        >
+                            <div className="logo" />
+                            <Icon
+                                className="trigger"
+                                type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'}
+                                onClick={this.toggle}
+                            />
+                            <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
+                                <Menu.Item key="1">
+                                    <Icon type="user" />
+                                    <Link to="/Home">Home</Link>
+                                </Menu.Item>
+                                <Menu.Item key="2">
+                                    <Icon type="video-camera" />
+                                    <Link to="/Input">Input</Link>
+                                </Menu.Item>
+                                <Menu.Item key="3">
+                                    <Icon type="upload" />
+                                    <Link to="/Comp1">Comp1</Link>
+                                </Menu.Item>
+                            </Menu>
+                        </Sider>
+                        
+                        <Content style={{ margin: '24px 16px', padding: 24, background: '#fff', minHeight: 280 }}>
+                            <Route exact path="/Home" component={Home} />
+                            <Route exact path="/Input" component={Input} />
+                            <Route exact path="/Comp1" component={Comp1} />
+                        </Content>
+                    
+                    </Layout>
                 </BrowserRouter>
-                <Row>
-                    <Col span={24}>
-                        <footer className="ant-layout-footer">footer</footer>
-                    </Col>
-                </Row>
-            </div> 
+                <Footer style={{ background: 'rgba(16, 142, 233, 1)', padding: 0 }}>
+                    Footer
+                </Footer>
+            </Layout>
+                
         );
     }
 }

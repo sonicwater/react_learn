@@ -3,10 +3,5 @@
   text-align: center;
 }
 
-header.ant-layout-header{    background: #3ba0e9;    color: #fff;}
-footer.ant-layout-footer{    background: #3ba0e9;    color: #fff;}
-
-.ant-layout-sider {background: #7dbcea;color: #fff;}
-.ant-layout-sider li {list-style: none;}
-.ant-layout-sider li a{color: #fff;}
+.ant-menu-item > a {display: inline-block;}
 
