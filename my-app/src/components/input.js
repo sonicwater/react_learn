@@ -1,6 +1,7 @@
 import React from 'react';
 import InputChild from './inputChild';
 import { Button } from 'antd';
+import { Row, Col, Layout, Menu, Icon } from 'antd';
 
 export default class Child extends React.Component {
 	constructor(props){
