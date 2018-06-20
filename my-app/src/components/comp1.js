@@ -7,7 +7,7 @@ export default class TodoItem extends React.Component{
     constructor(){
         super();
         this.state = {
-            value : [1,2,3],
+            value : [],
             inputVal : ""
         }
     }
@@ -17,17 +17,32 @@ export default class TodoItem extends React.Component{
         });
     }
     handleSubmit = () => {
+        let arr = this.state.value;
+        arr.push(this.state.inputVal);
         this.setState({
-            value:this.state.inputVal,
-            inputVal : ""
+            inputVal:"",
+            value:arr
+        })
+    }
+    delete = (index) => {
+        let arr = this.state.value;
+        arr.splice(index,1);
+        this.setState({
+            value:arr
         });
     }
     render () {
+        const data = this.state.value;
         return (
             <div>
                 <Row gutter={24}>
                     <Col className="gutter-row" span={6}>
-                        {this.state.value} <br />
+                        <ul>
+                            {data.map( ( item, index ) => {
+                                return <li key={index} onClick={this.delete.bind(this,index)}>{item}</li>
+                                })
+                            }
+                        </ul>
                     </Col>
                 </Row>
                  <Row gutter={24}>
